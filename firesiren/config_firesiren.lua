@@ -9,9 +9,7 @@ local config = {
     enabled = true,   
     pluginName = "firesiren", -- name your plugin here
     pluginAuthor = "Brentopc", -- author
-	configVersion = "1.1",
-		
-	checkTimer = 10000, -- how often to check for new fire calls
+	configVersion = "1.2",
     
 	firesirenResourceName = "inferno-fire-ems-pager", -- resource name of the Inferno Collection: Fire/EMS Pager + Fire Siren script and the nearest-postal script
 	nearestPostalResourceName = "nearest-postal", -- resource name of the nearest-postal script
