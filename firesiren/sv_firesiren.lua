@@ -10,6 +10,7 @@ CreateThread(function() Config.LoadPlugin("firesiren", function(pluginConfig)
 
     if pluginConfig.enabled then
         local state = GetResourceState(pluginConfig.firesirenResourceName)
+		local state = GetResourceState(pluginConfig.firesirenResourceName)
 		local shouldStop = false
 		if state ~= "started" then
 			if state == "missing" then
@@ -30,8 +31,28 @@ CreateThread(function() Config.LoadPlugin("firesiren", function(pluginConfig)
 			return
 		end
 		
+		state = GetResourceState(pluginConfig.nearestPostalResourceName)
+		if state ~= "started" then
+			if state == "missing" then
+				errorLog(("[firesiren] The configured nearestpostal resource (%s) does not exist. Please check the name."):format(pluginConfig.nearestPostalResourceName))
+				shouldStop = true
+			elseif state == "stopped" then
+				warnLog(("[firesiren] The nearestpostal resource (%s) is not started. Please ensure it's started before clients conntect. This is only a warning. State: %s"):format(pluginConfig.nearestPostalResourceName, state))
+			else
+				errorLog(("[firesiren] The configured nearestpostal resource (%s) is in a bad state (%s). Please check it."):format(pluginConfig.nearestPostalResourceName, state))
+				shouldStop = true
+			end
+		end
+		
+		if shouldStop then
+			pluginConfig.enabled = false
+			pluginConfig.disableReason = "nearestpostal resource incorrect"
+			errorLog("Force disabling plugin to prevent client errors.")
+			return
+		end
+		
 		postals = nil
-		postals = json.decode(LoadResourceFile(GetCurrentResourceName(), "plugins/firesiren/"..pluginConfig.postalsType..".json"))
+		postals = json.decode(LoadResourceFile(pluginConfig.nearestPostalResourceName, pluginConfig.postalsType..".json"))
 		if postals ~= nil then
 			for i, postal in ipairs(postals) do postals[i] = { vec(postal.x, postal.y), code = postal.code } end
 			
