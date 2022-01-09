@@ -83,7 +83,7 @@ CreateThread(function() Config.LoadPlugin("firesiren", function(pluginConfig)
 			
 			lastSirenCall = 0
 			
-			while true do				
+			AddEventHandler("SonoranCAD::pushevents:DispatchEvent", function()		
 				performApiRequest({callsData}, "GET_CALLS",  
 					function(resp)
 						debugLog(resp)						
@@ -116,14 +116,15 @@ CreateThread(function() Config.LoadPlugin("firesiren", function(pluginConfig)
 										
 										for _, Station in ipairs(ToBeSirened) do
 											TriggerEvent('Fire-EMS-Pager:StoreSiren', Station)
+											debugLog("Stored fire siren: " .. Station.Name)
 										end
-										Wait(2000)
+										Wait(2000)										
 										TriggerEvent('Fire-EMS-Pager:SoundSirens', ToBeSirened)
 										
 										if pluginConfig.addCallNote then
-											local callNote = pluginConfig.callNoteMessage
+											callNote = pluginConfig.callNoteMessage
 											if callNoteStation then
-												callNote = closestSiren.label .. " " .. pluginConfig.callNoteMessage
+												callNote = closestSiren.Label .. " " .. pluginConfig.callNoteMessage
 											end
 											
 											local callsNote = {			
@@ -146,8 +147,7 @@ CreateThread(function() Config.LoadPlugin("firesiren", function(pluginConfig)
 						end
 					end
 				)
-				Wait(pluginConfig.checkTimer)
-			end
+			end)
 		else
 			errorLog(("[firesiren] The configured postals type (%s) is in incorrect. Please check it."):format(pluginConfig.postalsType))
 			shouldStop = true
