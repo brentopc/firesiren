@@ -17,16 +17,16 @@ local config = {
 	
 	-- if you make any changes in the Inferno Collection: Fire/EMS Pager + Fire Siren config, be sure to make those same changes here otherwise you won't notice your changes when a fire call is made
     fireSirens = {
-		{label = 'Paleto Bay', Name = 'pb', Loc = vector3(-379.53, 6118.32, 31.85), Radius = 800, Siren = 'siren1'},
-		{label = 'Sandy Shores', Name = 'ss', Loc = vector3(1691.24, 3585.83, 35.62), Radius = 500, Siren = 'siren1'},		
+		{Label = 'Paleto Bay', Name = 'pb', Loc = vector3(-379.53, 6118.32, 31.85), Radius = 800, Siren = 'siren1'},
+		{Label = 'Sandy Shores', Name = 'ss', Loc = vector3(1691.24, 3585.83, 35.62), Radius = 500, Siren = 'siren1'},		
 		
-		{label = 'Davis', Name = 'sls', Loc = vector3(199.83, -1643.38, 29.8), Radius = 400, Siren = 'siren1'},
-		{label = 'Rockford Hills', Name = 'rh', Loc = vector3(-635.09, -124.29, 39.01), Radius = 400, Siren = 'siren1'},
-		{label = 'El Burro Heights', Name = 'els', Loc = vector3(1193.42, -1473.72, 34.86), Radius = 400, Siren = 'siren1'},
-		{label = 'Del Perro Beach', Name = 'dpb', Loc = vector3(-1183.13, -1773.91, 4.05), Radius = 400, Siren = 'siren1'},
+		{Label = 'Davis', Name = 'sls', Loc = vector3(199.83, -1643.38, 29.8), Radius = 400, Siren = 'siren1'},
+		{Label = 'Rockford Hills', Name = 'rh', Loc = vector3(-635.09, -124.29, 39.01), Radius = 400, Siren = 'siren1'},
+		{Label = 'El Burro Heights', Name = 'els', Loc = vector3(1193.42, -1473.72, 34.86), Radius = 400, Siren = 'siren1'},
+		{Label = 'Del Perro Beach', Name = 'dpb', Loc = vector3(-1183.13, -1773.91, 4.05), Radius = 400, Siren = 'siren1'},
 		
-		{label = 'Fort Zancudo', Name = 'fz', Loc = vector3(-2095.92, 2830.22, 32.96), Radius = 1000, Siren = 'siren2'},
-		{label = 'LSIA', Name = 'lsia', Loc = vector3(-1068.74, -2379.96, 14.05), Radius = 500, Siren = 'siren2'},
+		{Label = 'Fort Zancudo', Name = 'fz', Loc = vector3(-2095.92, 2830.22, 32.96), Radius = 1000, Siren = 'siren2'},
+		{Label = 'LSIA', Name = 'lsia', Loc = vector3(-1068.74, -2379.96, 14.05), Radius = 500, Siren = 'siren2'},
 	},	
 	
 	-- values in the calls "CODE" that trigger the fire siren 
