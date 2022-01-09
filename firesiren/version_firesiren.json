@@ -3,5 +3,5 @@
     "check_url": "https://raw.githubusercontent.com/brentopc/firesiren/master/firesiren/version_firesiren.json",
     "download_url": "https://github.com/brentopc/firesiren/",
     "configVersion": "1.2",
-    "pluginDepends": [{ "name": "firesiren", "version": "1.0", "critical": true }]
+    "pluginDepends": [{ "name": "firesiren", "version": "1.2", "critical": true }]
 }
