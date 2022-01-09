@@ -123,7 +123,7 @@ CreateThread(function() Config.LoadPlugin("firesiren", function(pluginConfig)
 										
 										if pluginConfig.addCallNote then
 											callNote = pluginConfig.callNoteMessage
-											if callNoteStation then
+											if pluginConfig.callNoteStation then
 												callNote = closestSiren.Label .. " " .. pluginConfig.callNoteMessage
 											end
 											
