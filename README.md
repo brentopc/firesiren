@@ -2,7 +2,7 @@
 
 ## Using
 
-If a fire call comes in that has an attached postal, the nearest fire siren is triggered
+If a fire call comes in that has an attached postal, the nearest configured fire siren is triggered
 
 ## Installation
 
